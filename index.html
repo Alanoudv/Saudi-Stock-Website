@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسهم والمدير الناجح</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">الـــــــــــــــمـــــــــــــدراء        والأســــــــــــهــــــــــم</div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#main-section">القسم الرئيسي</a></li>
+                <li><a href="#factors">العوامل المؤثرة</a></li>
+                <li><a href="#manager">دور المدير</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="main-section" class="hero-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h1>الأسهم والمدير الناجح</h1>
+                    <p>الأسهم تمثل ملكية جزئية في الشركة<br>
+                         وتُعد من أهم أدوات الاستثمار, نجاح الشركة يؤثر بشكل مباشر على قيمة أسهمها. <Br>
+                         هنا يظهر دور المدير الناجح، الذي يقود الشركة برؤية واضحة، ويحقق نموًا مستدامًا، مما ينعكس إيجابًا على أداء الأسهم.</p>
+                </div>
+                <div class="image-container">
+                    <div class="image-placeholder" id="mbs-image">
+                        <!-- MBS Image will be set as background -->
+                    </div>
+                    <div class="image-placeholder" id="saudi-market-image">
+                        <!-- Saudi Market Image will be set as background -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="factors" class="info-section">
+            <h2>عوامل تؤثر على الاسهم المالية</h2>
+            <div class="factors-grid">
+                <div class="factor-card">
+                    <h3>أرباح الشركة</h3>
+                    <p>كل ما زادت أرباح الشركة، زادت ثقة المستثمرين وارتفعت قيمة السهم. والعكس صحيح إذا تراجعت الأرباح.</p>
+                </div>
+                <div class="factor-card">
+                    <h3>الإيرادات</h3>
+                    <p>ارتفاع الإيرادات يعني أن الشركة تحقق مبيعات جيدة، مما يعطي انطباعًا إيجابيًا ويؤثر على سعر السهم.</p>
+                </div>
+                <div class="factor-card">
+                    <h3>التوقعات المستقبلية</h3>
+                    <p>توقعات النمو أو توسع الشركة تؤثر على قرار المستثمر، حتى لو كانت النتائج الحالية متوسطة.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="manager" class="info-section">
+            <h2>دور المدير الناجح في نجاح الشركة</h2>
+            <div class="manager-content">
+                <p class="centered-paragraph">المدير الناجح هو المحرك الأساسي لنجاح أي شركة. فهو يقود الفريق، ويحدد الأهداف، ويضع الخطط لتحقيقها. <br>
+                    من خلال رؤيته الاستراتيجية، يستطيع توجيه الشركة في الاتجاه الصحيح وتحقيق نمو مستدام.</p>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <h3>تحديد الأهداف والرؤية</h3>
+                    </div>
+                    <div class="role-card">
+                        <h3>بناء فريق قوي</h3>
+                    </div>
+                    <div class="role-card">
+                        <h3>اتخاذ القرارات</h3>
+                    </div>
+                    <div class="role-card">
+                        <h3>تحقيق رضاء العملاء</h3>
+                    </div>
+                    <div class="role-card">
+                        <h3>إدارة الأزمات</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+    
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu after clicking
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    </body>
+    <footer>
+        <p>© ا 1446 هـــــــــــــــــــــ    -    مــــشــــــــــروع الـــــــــتـــــــــــخــــــــــرج |||| الـــــــــــــــمـــــــــــــدراء والأســــــــــــهــــــــــم </p>
+    </footer>
+</body>
+</html> 
